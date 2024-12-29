@@ -12,3 +12,47 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String 
+  email    String @unique
+  password String 
+  playlists Playlist[]
+  like Like[]
+}
+
+model Playlist {
+  id      Int    @id @default(autoincrement())
+  userId  Int
+  name    String
+  user    User   @relation(fields: [userId], references: [id])
+  musics  Playlist_music[]
+}
+
+model Music {
+  id       Int            @id @default(autoincrement())
+  name     String
+  artist   String
+  playlists Playlist_music[] 
+  likes    Like[]           
+}
+
+model Playlist_music {
+  playlistId   Int
+  musicId      Int
+  playlist     Playlist @relation(fields: [playlistId], references: [id])
+  music        Music    @relation(fields: [musicId], references: [id])
+
+  @@id([playlistId, musicId])
+}
+
+model Like {
+  id    Int
+  userId Int
+  musicId Int
+  user    User @relation(fields: [userId], references: [id])
+  music   Music @relation(fields: [musicId], references: [id])
+
+  @@unique([userId, musicId])
+}
