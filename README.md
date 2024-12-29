@@ -1,6 +1,5 @@
 <div align="center"> <img src="https://i.imgur.com/5UELrjO.png" alt="SoundBeat Logo" width="200"/>
 SoundBeat
-
 Create, share and discover playlists
 </div>
 About
