@@ -1,14 +1,56 @@
-<p align="center">
-  <a href="https://imgur.com/a/R86TcEv" target="blank"><img src="https://i.imgur.com/rXJ0Qoi.png" width="120" alt="SoundBeat Logo" /></a>
-</p>
+<div align="center"> <img src="https://i.imgur.com/5UELrjO.png" alt="SoundBeat Logo" width="200"/>
+SoundBeat
 
-# SoundBeat
+Create, share and discover playlists
+</div>
+About
 
-SoundBeat is an open-source platform for creating and sharing playlists. Discover new music, share your favorites, and connect with people who have similar music tastes.
+SoundBeat is a platform where music lovers can share playlists and connect with others who have similar music taste.
+Features
 
-## Setup
+    Create and share playlists
+    Discover people with similar music taste
+    Follow users and their collections
+    Create collaborative playlists
+    Track playlist engagement
+    Control privacy settings
 
-To get started, install the dependencies:
+Tech Stack
 
-```bash
-$ pnpm install
+    NestJS v10 with TypeScript
+    PostgreSQL with Prisma ORM
+    Docker
+    Jest for testing
+    Swagger for API docs
+
+Quick Start
+
+bash
+
+# Clone and enter
+git clone https://github.com/LeviMaycon/openbeat-backend.git
+cd soundbeat
+
+# Setup
+cp .env.example .env
+
+# Run with Docker
+docker compose up -d
+
+Development
+
+bash
+
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm start:dev
+
+# Run tests
+pnpm test
+
+API Documentation
+
+Access Swagger UI at http://localhost:3333/api
+
