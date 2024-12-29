@@ -1,0 +1,14 @@
+services:
+  soundbeat-db:
+    image: bitnami/postgresql
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRESQL_USERNAME: johndoe
+      POSTGRESQL_PASSWORD: randompassword
+      POSTGRESQL_DATABASE: soundbeat-db
+    volumes:
+      - ./.docker/soundbeat-db/data:/var/lib/soundbeat-db/:delegated
+
+volumes:
+  soundbeat-db:
