@@ -1,9 +1,5 @@
-<div align="center"> <img src="https://i.imgur.com/5UELrjO.png" alt="SoundBeat Logo" width="200"/>
-SoundBeat
-Create, share and discover playlists
-</div>
-About
-
+<div align="center"> <img src="https://i.imgur.com/5UELrjO.png" alt="SoundBeat Logo" width="200"/></div>
+<div align="center">SoundBeat Create, share and discover playlists</div>
 SoundBeat is a platform where music lovers can share playlists and connect with others who have similar music taste.
 Features
 
