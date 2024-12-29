@@ -13,7 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Customer {
   id       Int    @id @default(autoincrement())
   name     String 
   email    String @unique
@@ -24,9 +24,9 @@ model User {
 
 model Playlist {
   id      Int    @id @default(autoincrement())
-  userId  Int
+  customerId  Int
   name    String
-  user    User   @relation(fields: [userId], references: [id])
+  customer    Customer   @relation(fields: [customerId], references: [id])
   musics  Playlist_music[]
 }
 
@@ -49,10 +49,10 @@ model Playlist_music {
 
 model Like {
   id    Int
-  userId Int
+  customerId Int
   musicId Int
-  user    User @relation(fields: [userId], references: [id])
+  customer    Customer @relation(fields: [customerId], references: [id])
   music   Music @relation(fields: [musicId], references: [id])
 
-  @@unique([userId, musicId])
+  @@unique([customerId, musicId])
 }
